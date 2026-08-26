@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SprintLing AI 下载中心 — 短跑力学分析与应用</title>
+<style>
+  :root { --red:#e63946; --dark:#1d1d1f; --gray:#6e6e73; --bg:#f5f5f7; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",-apple-system,sans-serif; background:var(--bg); color:var(--dark); }
+  .hero { background:linear-gradient(135deg,#1d1d1f 0%,#3a3a3f 60%,#e63946 160%); color:#fff; padding:64px 24px 48px; text-align:center; }
+  .hero h1 { font-size:40px; letter-spacing:2px; margin-bottom:10px; }
+  .hero p { font-size:17px; opacity:.85; max-width:640px; margin:0 auto; line-height:1.7; }
+  .badge { display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); border-radius:999px; padding:4px 16px; font-size:13px; margin-top:14px; }
+  .wrap { max-width:880px; margin:0 auto; padding:40px 24px 64px; }
+  .card { background:#fff; border-radius:16px; padding:28px 32px; margin-bottom:20px; box-shadow:0 2px 12px rgba(0,0,0,.06); }
+  .card h2 { font-size:20px; margin-bottom:14px; border-left:4px solid var(--red); padding-left:12px; }
+  .btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-size:17px; font-weight:600; padding:14px 40px; border-radius:999px; transition:.2s; }
+  .btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(230,57,70,.35); }
+  .btn.ghost { background:transparent; border:1.5px solid var(--red); color:var(--red); }
+  .dl-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .meta { font-size:13px; color:var(--gray); margin-top:10px; }
+  ul.features { list-style:none; }
+  ul.features li { padding:8px 0 8px 26px; position:relative; font-size:15px; line-height:1.6; }
+  ul.features li::before { content:"✓"; position:absolute; left:0; color:var(--red); font-weight:700; }
+  ol.steps { padding-left:22px; }
+  ol.steps li { margin:8px 0; font-size:15px; line-height:1.7; }
+  .tip { background:#fff8e6; border:1px solid #ffd88a; border-radius:10px; padding:12px 16px; font-size:14px; margin-top:12px; line-height:1.7; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  td, th { border:1px solid #e5e5ea; padding:10px 12px; text-align:left; }
+  th { background:#f0f0f3; }
+  .footer { text-align:center; color:var(--gray); font-size:13px; padding:24px; }
+  code { background:#f0f0f3; padding:2px 6px; border-radius:5px; font-size:13px; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>SprintLing AI</h1>
+  <p>基于机器学习（YOLOv8 姿态估计）与大模型的短跑力学分析与应用<br>上传一段跑步视频，自动完成生物力学诊断并生成 AI 教练训练处方</p>
+  <div class="badge">Windows 10/11 · 完全本地运行 · 免费</div>
+</div>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>下载软件</h2>
+    <div class="dl-row">
+      <a class="btn" id="direct-link" href="#" data-repo="https://github.com/runlin1113/sprintling-ai">下载 SprintLing AI (Windows)</a>
+      <a class="btn ghost" id="mirror-link" href="#" target="_blank" rel="noopener">国内加速镜像 ⚡</a>
+    </div>
+    <div class="meta" id="file-meta">版本 v1.0.0 · 约 500~800 MB · 下载后解压，双击 SprintLingAI.exe 即可使用</div>
+    <div class="tip">⚠️ 下载慢？用「国内加速镜像」；若浏览器提示"无法安全下载"，点「保留」即可。软件未做商业签名，Windows 可能弹"已保护你的电脑"，点「更多信息 → 仍要运行」。</div>
+  </div>
+
+  <div class="card">
+    <h2>功能介绍</h2>
+    <ul class="features">
+      <li>YOLOv8 姿态估计：自动识别起跑加速段与途中跑极速段</li>
+      <li>运动学指标：关节角度、躯干前倾、速度曲线、步频步幅等</li>
+      <li>可视化图表：动力学仪表盘一键生成</li>
+      <li>AI 教练报告：DeepSeek 大模型生成个性化训练处方，可导出 Word</li>
+      <li>本地运行：视频不出电脑，分析结果完整保留</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>使用步骤</h2>
+    <ol class="steps">
+      <li>下载压缩包并<strong>完整解压</strong>（不要只拖出 exe 单个文件）</li>
+      <li>双击 <code>SprintLingAI.exe</code>，浏览器自动打开分析界面（http://127.0.0.1:5000）</li>
+      <li>点击「开始分析」，上传一段 <strong>10 秒内</strong>的跑步/起跑视频</li>
+      <li>等待分析完成，查看力学指标与 AI 教练报告（可下载 Word）</li>
+    </ol>
+    <div class="tip">💡 有 NVIDIA 显卡分析更快；纯 CPU 也能用但 5 秒视频约需 3~8 分钟。<br>🔑 软件内置 50 次 AI 报告免费额度，用完后在软件目录 <code>config.ini</code> 填自己的 DeepSeek Key 即可继续（见软件内《使用说明.txt》）。</div>
+  </div>
+
+  <div class="card">
+    <h2>系统要求</h2>
+    <table>
+      <tr><th>项目</th><th>要求</th></tr>
+      <tr><td>系统</td><td>Windows 10 / 11（64 位）</td></tr>
+      <tr><td>内存</td><td>8 GB 以上（推荐 16 GB）</td></tr>
+      <tr><td>显卡</td><td>推荐 NVIDIA 显卡（非必需）</td></tr>
+      <tr><td>磁盘</td><td>解压后约 2 GB 可用空间</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>常见问题</h2>
+    <table>
+      <tr><th>问题</th><th>解决办法</th></tr>
+      <tr><td>提示"已保护你的电脑"</td><td>点「更多信息」→「仍要运行」（软件无商业签名，属正常提示）</td></tr>
+      <tr><td>浏览器没有自动打开</td><td>手动访问 <code>http://127.0.0.1:5000</code></td></tr>
+      <tr><td>分析很慢</td><td>压缩视频到 10 秒内；关闭占用显卡/内存的程序；确认用 NVIDIA 显卡运行</td></tr>
+      <tr><td>端口被占用</td><td>软件会自动换端口，以黑色控制台窗口显示的地址为准</td></tr>
+      <tr><td>AI 报告提示额度用完</td><td>按提示在 <code>config.ini</code> 中填写自己的 DeepSeek API Key</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">SprintLing AI — 一切为了更快 · 机器学习与大模型课程设计项目 · 仅供学习与科研交流使用</div>
+</div>
+
+<script>
+  // 下载链接在页面发布后由发布脚本注入（GitHub Release 资产直链 + ghproxy 镜像）
+  // 兜底：无注入时跳转仓库 Release 页
+  (function(){
+    var base = document.getElementById('direct-link').getAttribute('data-repo');
+    if (!base) return;
+    var asset = base + '/releases/latest/download/SprintLingAI_Windows_v1.0.0.zip';
+    document.getElementById('direct-link').href = asset;
+    document.getElementById('mirror-link').href = 'https://ghproxy.net/' + asset;
+  })();
+</script>
+</body>
+</html>

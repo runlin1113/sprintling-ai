@@ -1,116 +1,455 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SprintLing AI 下载中心 — 短跑力学分析与应用</title>
-<style>
-  :root { --red:#e63946; --dark:#1d1d1f; --gray:#6e6e73; --bg:#f5f5f7; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:"PingFang SC","Microsoft YaHei",-apple-system,sans-serif; background:var(--bg); color:var(--dark); }
-  .hero { background:linear-gradient(135deg,#1d1d1f 0%,#3a3a3f 60%,#e63946 160%); color:#fff; padding:64px 24px 48px; text-align:center; }
-  .hero h1 { font-size:40px; letter-spacing:2px; margin-bottom:10px; }
-  .hero p { font-size:17px; opacity:.85; max-width:640px; margin:0 auto; line-height:1.7; }
-  .badge { display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); border-radius:999px; padding:4px 16px; font-size:13px; margin-top:14px; }
-  .wrap { max-width:880px; margin:0 auto; padding:40px 24px 64px; }
-  .card { background:#fff; border-radius:16px; padding:28px 32px; margin-bottom:20px; box-shadow:0 2px 12px rgba(0,0,0,.06); }
-  .card h2 { font-size:20px; margin-bottom:14px; border-left:4px solid var(--red); padding-left:12px; }
-  .btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-size:17px; font-weight:600; padding:14px 40px; border-radius:999px; transition:.2s; }
-  .btn:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(230,57,70,.35); }
-  .btn.ghost { background:transparent; border:1.5px solid var(--red); color:var(--red); }
-  .dl-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
-  .meta { font-size:13px; color:var(--gray); margin-top:10px; }
-  ul.features { list-style:none; }
-  ul.features li { padding:8px 0 8px 26px; position:relative; font-size:15px; line-height:1.6; }
-  ul.features li::before { content:"✓"; position:absolute; left:0; color:var(--red); font-weight:700; }
-  ol.steps { padding-left:22px; }
-  ol.steps li { margin:8px 0; font-size:15px; line-height:1.7; }
-  .tip { background:#fff8e6; border:1px solid #ffd88a; border-radius:10px; padding:12px 16px; font-size:14px; margin-top:12px; line-height:1.7; }
-  table { width:100%; border-collapse:collapse; font-size:14px; }
-  td, th { border:1px solid #e5e5ea; padding:10px 12px; text-align:left; }
-  th { background:#f0f0f3; }
-  .footer { text-align:center; color:var(--gray); font-size:13px; padding:24px; }
-  code { background:#f0f0f3; padding:2px 6px; border-radius:5px; font-size:13px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SprintLing — 一切为了更快 | 官网</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- ====== LANDING PAGE ====== -->
+    <div id="landing-page" class="landing-page active">
+        <!-- Navigation -->
+        <nav class="landing-nav">
+            <div class="nav-container">
+                <div class="nav-logo" onclick="scrollToTop()">
+                    <div class="logo-mark">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 32 L20 8 L32 32" stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="logoGrad" x1="8" y1="8" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#FF6B35"/>
+                                    <stop offset="100%" stop-color="#E50914"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="logo-text">SprintLing</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#technology" class="nav-link">Technology</a>
+                    <a href="#process" class="nav-link">How it Works</a>
+                </div>
+                <a class="nav-cta-secondary" href="download.html" download title="下载 Windows 桌面版（312MB）">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3v10.59l3.3-3.29 1.4 1.41L12 17.41 7.3 11.71l1.4-1.41L12 13.59V3h0zM5 19h14v2H5v-2z"/></svg>
+                    下载 Windows 桌面版
+                </a>
+            </div>
+        </nav>
 
-<div class="hero">
-  <h1>SprintLing AI</h1>
-  <p>基于机器学习（YOLOv8 姿态估计）与大模型的短跑力学分析与应用<br>上传一段跑步视频，自动完成生物力学诊断并生成 AI 教练训练处方</p>
-  <div class="badge">Windows 10/11 · 完全本地运行 · 免费</div>
-</div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg-elements">
+                <div class="hero-gradient-1"></div>
+                <div class="hero-gradient-2"></div>
+                <div class="hero-grid"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    AI-Powered Biomechanics Platform
+                </div>
+                <h1 class="hero-title">
+                    <span class="hero-line">SprintLing</span>
+                    <span class="hero-tagline">一切为了更快</span>
+                </h1>
+                <p class="hero-desc">
+                    融合计算机视觉与大语言模型，为短跑与跨栏运动员提供毫秒级运动学分析、
+                    精准生物力学诊断与个性化训练处方。
+                    <br/>
+                    Elite-level biomechanics, accessible to every athlete.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn-hero-primary" href="download.html">
+                        下载 Windows 桌面版
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <button class="btn-hero-secondary" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+                        Learn More
+                    </button>
+                </div>
+                <div class="hero-metrics">
+                    <div class="metric">
+                        <div class="metric-value">0.01<span>s</span></div>
+                        <div class="metric-label">Time Resolution</div>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric">
+                        <div class="metric-value">17<span>pts</span></div>
+                        <div class="metric-label">Pose Keypoints</div>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric">
+                        <div class="metric-value">AI</div>
+                        <div class="metric-label">Coach Expert</div>
+                    </div>
+                </div>
+            </div>
 
-<div class="wrap">
+            <!-- Hero Visual -->
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <div class="visual-header">
+                        <span class="visual-dot red"></span>
+                        <span class="visual-dot yellow"></span>
+                        <span class="visual-dot green"></span>
+                        <span class="visual-title">Biomechanical Analysis Engine</span>
+                    </div>
+                    <div class="visual-body">
+                        <svg class="sprint-figure" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Track lines -->
+                            <line x1="0" y1="180" x2="280" y2="180" stroke="#2a2a3e" stroke-width="1" stroke-dasharray="4 4"/>
+                            <line x1="0" y1="188" x2="280" y2="188" stroke="#1a1a2e" stroke-width="2"/>
+                            <line x1="0" y1="195" x2="280" y2="195" stroke="#1a1a2e" stroke-width="3"/>
 
-  <div class="card">
-    <h2>下载软件</h2>
-    <div class="dl-row">
-      <a class="btn" id="direct-link" href="#" data-repo="https://github.com/runlin1113/sprintling-ai">下载 SprintLing AI (Windows)</a>
-      <a class="btn ghost" id="mirror-link" href="#" target="_blank" rel="noopener">国内加速镜像 ⚡</a>
+                            <!-- Sprinting figure silhouette -->
+                            <g class="sprinter" fill="url(#sprintGrad)" transform="translate(80, 20)">
+                                <!-- Head -->
+                                <circle cx="80" cy="18" r="10"/>
+                                <!-- Torso -->
+                                <path d="M72 30 L85 28 L88 65 L70 67 Z"/>
+                                <!-- Arms - swinging -->
+                                <path d="M72 35 L55 55 L58 62 L75 43 Z" opacity="0.9"/>
+                                <path d="M88 33 L110 48 L106 55 L90 42 Z" opacity="0.9"/>
+                                <!-- Front leg - driving forward -->
+                                <path d="M72 67 L60 98 L56 105 L66 107 L80 78 Z"/>
+                                <!-- Back leg - pushing off -->
+                                <path d="M84 68 L115 120 L120 132 L112 135 L88 82 Z"/>
+                                <!-- Feet -->
+                                <ellipse cx="57" cy="110" rx="8" ry="3" fill="#FF6B35"/>
+                                <ellipse cx="120" cy="138" rx="10" ry="3" fill="#FF6B35"/>
+                                <!-- Motion lines -->
+                                <line x1="130" y1="40" x2="150" y2="40" stroke="#FF6B35" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="130" y1="55" x2="165" y2="55" stroke="#FF6B35" stroke-width="1.5" opacity="0.5"/>
+                                <line x1="130" y1="70" x2="155" y2="70" stroke="#FF6B35" stroke-width="1.5" opacity="0.4"/>
+                            </g>
+                            <defs>
+                                <linearGradient id="sprintGrad" x1="55" y1="10" x2="125" y2="140">
+                                    <stop offset="0%" stop-color="#FF8A50"/>
+                                    <stop offset="100%" stop-color="#E50914"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                        <!-- Analysis overlay -->
+                        <div class="analysis-overlay">
+                            <div class="analysis-tag tag-1">
+                                <span class="tag-label">Knee Angular Vel</span>
+                                <span class="tag-value">312°/s</span>
+                            </div>
+                            <div class="analysis-tag tag-2">
+                                <span class="tag-label">Torso Lean</span>
+                                <span class="tag-value">18.4°</span>
+                            </div>
+                            <div class="analysis-tag tag-3">
+                                <span class="tag-label">Symmetry Index</span>
+                                <span class="tag-value tag-good">96.2%</span>
+                            </div>
+                        </div>
+
+                        <!-- Waveform -->
+                        <div class="waveform-container">
+                            <svg viewBox="0 0 300 60" class="waveform" preserveAspectRatio="none">
+                                <path d="M0,40 Q15,20 30,38 T60,35 T90,42 T120,28 T150,33 T180,40 T210,25 T240,36 T270,30 T300,35 L300,60 L0,60 Z" 
+                                      fill="url(#waveGrad)" opacity="0.3"/>
+                                <path d="M0,40 Q15,20 30,38 T60,35 T90,42 T120,28 T150,33 T180,40 T210,25 T240,36 T270,30 T300,35" 
+                                      stroke="url(#waveGrad)" stroke-width="2" fill="none"/>
+                                <defs>
+                                    <linearGradient id="waveGrad" x1="0" x2="300">
+                                        <stop offset="0%" stop-color="#FF6B35"/>
+                                        <stop offset="100%" stop-color="#E50914"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="section-header">
+                <div class="section-eyebrow">Core Capabilities</div>
+                <h2 class="section-title">Powerful tools. <span>Precise insights.</span></h2>
+                <p class="section-subtitle">
+                    从视频上传到专业训练处方，端到端的AI生物力学分析流水线
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                            <line x1="7" y1="2" x2="7" y2="22"></line>
+                            <line x1="17" y1="2" x2="17" y2="22"></line>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <line x1="2" y1="7" x2="7" y2="7"></line>
+                            <line x1="2" y1="17" x2="7" y2="17"></line>
+                            <line x1="17" y1="17" x2="22" y2="17"></line>
+                            <line x1="17" y1="7" x2="22" y2="7"></line>
+                        </svg>
+                    </div>
+                    <h3>Multi-Phase Analysis</h3>
+                    <p>同时支持起跑加速段与途中跑极速段，针对不同阶段的运动学特征进行独立建模与联合分析。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="--icon-color: #22D3EE;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>YOLO Pose Engine</h3>
+                    <p>基于YOLOv8姿态估计模型，17个关键骨骼点实时追踪，EMA平滑算法确保运动学求导精度。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="--icon-color: #A78BFA;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                            <path d="M12 2a10 10 0 0 1 10 10h-10V2z"></path>
+                            <polyline points="22 12 12 12 12 2"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Data Visualization</h3>
+                    <p>动力学仪表盘可视化：躯干倾角变化曲线、膝关节折叠对称性对比，核心指标一目了然。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="--icon-color: #4ADE80;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>DeepSeek AI Coach</h3>
+                    <p>深度集成DeepSeek大模型，结合生物力学知识库，输出结构化Markdown诊断与训练处方。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="--icon-color: #F472B6;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Word Report Export</h3>
+                    <p>一键导出Word格式训练计划报告，包含完整诊断、理论映射与专项干预处方，便于打印归档。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="--icon-color: #FBBF24;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>History Archives</h3>
+                    <p>完整的历史数据归档系统，随时回溯过往分析记录，长期追踪技术进步与伤病预警趋势。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section id="technology" class="tech-section">
+            <div class="tech-container">
+                <div class="tech-text">
+                    <div class="section-eyebrow">Technology Stack</div>
+                    <h2 class="section-title">Engineered for <span>peak performance.</span></h2>
+                    <p class="section-subtitle" style="text-align:left;">
+                        采用业界领先的技术栈，从计算机视觉到自然语言处理，每一层都为精准而生。
+                    </p>
+
+                    <div class="tech-list">
+                        <div class="tech-item">
+                            <div class="tech-num">01</div>
+                            <div class="tech-info">
+                                <h4>YOLOv8 Pose Estimation</h4>
+                                <p>实时多人姿态检测，针对单运动员场景优化目标锁定算法</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-num">02</div>
+                            <div class="tech-info">
+                                <h4>Biomechanical Feature Engineering</h4>
+                                <p>膝关节角速度、躯干倾角、CNS稳定系数、对称性指数等降维指标</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-num">03</div>
+                            <div class="tech-info">
+                                <h4>DeepSeek LLM Integration</h4>
+                                <p>结构化Prompt + 知识库上下文，输出Markdown训练处方</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-visual">
+                    <div class="stack-layer" style="--delay: 0s; --x: 0px; --y: 0px;">
+                        <div class="layer-icon">🧠</div>
+                        <div class="layer-title">DeepSeek AI</div>
+                        <div class="layer-desc">Training Prescription</div>
+                    </div>
+                    <div class="stack-layer" style="--delay: 0.15s; --x: 40px; --y: 60px;">
+                        <div class="layer-icon">📊</div>
+                        <div class="layer-title">SciPy / NumPy</div>
+                        <div class="layer-desc">Signal Processing</div>
+                    </div>
+                    <div class="stack-layer" style="--delay: 0.3s; --x: -40px; --y: 120px;">
+                        <div class="layer-icon">🎯</div>
+                        <div class="layer-title">YOLOv8</div>
+                        <div class="layer-desc">Pose Detection</div>
+                    </div>
+                    <div class="stack-layer" style="--delay: 0.45s; --x: 20px; --y: 180px;">
+                        <div class="layer-icon">🎥</div>
+                        <div class="layer-title">OpenCV</div>
+                        <div class="layer-desc">Video Processing</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="process-section">
+            <div class="section-header">
+                <div class="section-eyebrow">Workflow</div>
+                <h2 class="section-title">From video to <span>victory.</span></h2>
+                <p class="section-subtitle">
+                    三步完成从原始视频到专业训练计划的全流程
+                </p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <h3>Upload Video</h3>
+                    <p>上传起跑段与途中跑段视频（支持MP4、MOV格式，推荐60fps以上原速拍摄）。</p>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="step-arrow">
+                    <svg viewBox="0 0 60 20" fill="none">
+                        <path d="M0 10 H55 M48 3 L55 10 L48 17" stroke="url(#arrowGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="arrowGrad" x1="0" x2="55">
+                                <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="#E50914"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <h3>AI Biomechanical Analysis</h3>
+                    <p>系统自动执行姿态检测、特征提取、动力学计算与可视化，全程无需人工干预。</p>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="step-arrow">
+                    <svg viewBox="0 0 60 20" fill="none">
+                        <path d="M0 10 H55 M48 3 L55 10 L48 17" stroke="url(#arrowGrad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="arrowGrad2" x1="0" x2="55">
+                                <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="#E50914"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <h3>Get Training Protocol</h3>
+                    <p>AI教练输出诊断报告+Word版训练处方，包含动作要点、组数间歇与配速要求。</p>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <a class="btn-hero-primary large" href="download.html">
+                    下载 Windows 桌面版
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="landing-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-logo" style="margin-bottom:16px;">
+                        <div class="logo-mark">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 32 L20 8 L32 32" stroke="url(#logoGrad2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                    <linearGradient id="logoGrad2" x1="8" y1="8" x2="32" y2="32">
+                                        <stop offset="0%" stop-color="#FF6B35"/>
+                                        <stop offset="100%" stop-color="#E50914"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="logo-text">SprintLing</span>
+                    </div>
+                    <p class="footer-tagline">一切为了更快 — 让每位运动员都能获得顶级生物力学诊断</p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h5>Product</h5>
+                        <a href="#features">Features</a>
+                        <a href="#technology">Technology</a>
+                        <a href="#process">How it Works</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Support</h5>
+                        <a href="#">Documentation</a>
+                        <a href="#">Guidelines</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 SprintLing. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
-    <div class="meta" id="file-meta">版本 v1.0.0 · 约 500~800 MB · 下载后解压，双击 SprintLingAI.exe 即可使用</div>
-    <div class="tip">⚠️ 下载慢？用「国内加速镜像」；若浏览器提示"无法安全下载"，点「保留」即可。软件未做商业签名，Windows 可能弹"已保护你的电脑"，点「更多信息 → 仍要运行」。</div>
-  </div>
 
-  <div class="card">
-    <h2>功能介绍</h2>
-    <ul class="features">
-      <li>YOLOv8 姿态估计：自动识别起跑加速段与途中跑极速段</li>
-      <li>运动学指标：关节角度、躯干前倾、速度曲线、步频步幅等</li>
-      <li>可视化图表：动力学仪表盘一键生成</li>
-      <li>AI 教练报告：DeepSeek 大模型生成个性化训练处方，可导出 Word</li>
-      <li>本地运行：视频不出电脑，分析结果完整保留</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>使用步骤</h2>
-    <ol class="steps">
-      <li>下载压缩包并<strong>完整解压</strong>（不要只拖出 exe 单个文件）</li>
-      <li>双击 <code>SprintLingAI.exe</code>，浏览器自动打开分析界面（http://127.0.0.1:5000）</li>
-      <li>点击「开始分析」，上传一段 <strong>10 秒内</strong>的跑步/起跑视频</li>
-      <li>等待分析完成，查看力学指标与 AI 教练报告（可下载 Word）</li>
-    </ol>
-    <div class="tip">💡 有 NVIDIA 显卡分析更快；纯 CPU 也能用但 5 秒视频约需 3~8 分钟。<br>🔑 软件内置 50 次 AI 报告免费额度，用完后在软件目录 <code>config.ini</code> 填自己的 DeepSeek Key 即可继续（见软件内《使用说明.txt》）。</div>
-  </div>
-
-  <div class="card">
-    <h2>系统要求</h2>
-    <table>
-      <tr><th>项目</th><th>要求</th></tr>
-      <tr><td>系统</td><td>Windows 10 / 11（64 位）</td></tr>
-      <tr><td>内存</td><td>8 GB 以上（推荐 16 GB）</td></tr>
-      <tr><td>显卡</td><td>推荐 NVIDIA 显卡（非必需）</td></tr>
-      <tr><td>磁盘</td><td>解压后约 2 GB 可用空间</td></tr>
-    </table>
-  </div>
-
-  <div class="card">
-    <h2>常见问题</h2>
-    <table>
-      <tr><th>问题</th><th>解决办法</th></tr>
-      <tr><td>提示"已保护你的电脑"</td><td>点「更多信息」→「仍要运行」（软件无商业签名，属正常提示）</td></tr>
-      <tr><td>浏览器没有自动打开</td><td>手动访问 <code>http://127.0.0.1:5000</code></td></tr>
-      <tr><td>分析很慢</td><td>压缩视频到 10 秒内；关闭占用显卡/内存的程序；确认用 NVIDIA 显卡运行</td></tr>
-      <tr><td>端口被占用</td><td>软件会自动换端口，以黑色控制台窗口显示的地址为准</td></tr>
-      <tr><td>AI 报告提示额度用完</td><td>按提示在 <code>config.ini</code> 中填写自己的 DeepSeek API Key</td></tr>
-    </table>
-  </div>
-
-  <div class="footer">SprintLing AI — 一切为了更快 · 机器学习与大模型课程设计项目 · 仅供学习与科研交流使用</div>
-</div>
-
-<script>
-  // 下载链接在页面发布后由发布脚本注入（GitHub Release 资产直链 + ghproxy 镜像）
-  // 兜底：无注入时跳转仓库 Release 页
-  (function(){
-    var base = document.getElementById('direct-link').getAttribute('data-repo');
-    if (!base) return;
-    var asset = base + '/releases/latest/download/SprintLingAI_Windows_v1.0.0.zip';
-    document.getElementById('direct-link').href = asset;
-    document.getElementById('mirror-link').href = 'https://ghproxy.net/' + asset;
-  })();
-</script>
+    <!-- ====== MAIN APP ====== -->
+    <script>
+        function scrollToTop(){ window.scrollTo({ top: 0, behavior: "smooth" }); }
+    </script>
 </body>
 </html>

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SprintLing — 一切为了更快</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ====== LANDING PAGE ====== -->
+    <div id="landing-page" class="landing-page active">
+        <!-- Navigation -->
+        <nav class="landing-nav">
+            <div class="nav-container">
+                <div class="nav-logo" onclick="scrollToTop()">
+                    <div class="logo-mark">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 32 L20 8 L32 32" stroke="url(#logoGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="logoGrad" x1="8" y1="8" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#FF6B35"/>
+                                    <stop offset="100%" stop-color="#E50914"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="logo-text">SprintLing</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#technology" class="nav-link">Technology</a>
+                    <a href="#process" class="nav-link">How it Works</a>
+                </div>
+                <button class="nav-cta" onclick="enterApp()">Launch Dashboard →</button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg-elements">
+                <div class="hero-gradient-1"></div>
+                <div class="hero-gradient-2"></div>
+                <div class="hero-grid"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    AI-Powered Biomechanics Platform
+                </div>
+                <h1 class="hero-title">
+                    <span class="hero-line">SprintLing</span>
+                    <span class="hero-tagline">一切为了更快</span>
+                </h1>
+                <p class="hero-desc">
+                    融合计算机视觉与大语言模型，为短跑与跨栏运动员提供毫秒级运动学分析、
+                    精准生物力学诊断与个性化训练处方。
+                    <br/>
+                    Elite-level biomechanics, accessible to every athlete.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-hero-primary" onclick="enterApp()">
+                        Start Analysis
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                    <button class="btn-hero-secondary" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+                        Learn More
+                    </button>
+                </div>
+                <div class="hero-metrics">
+                    <div class="metric">
+                        <div class="metric-value">0.01<span>s</span></div>
+                        <div class="metric-label">Time Resolution</div>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric">
+                        <div class="metric-value">17<span>pts</span></div>
+                        <div class="metric-label">Pose Keypoints</div>
+                    </div>
+                    <div class="metric-divider"></div>
+                    <div class="metric">
+                        <div class="metric-value">AI</div>
+                        <div class="metric-label">Coach Expert</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <div class="visual-header">
+                        <span class="visual-dot red"></span>
+                        <span class="visual-dot yellow"></span>
+                        <span class="visual-dot green"></span>
+                        <span class="visual-title">Biomechanical Analysis Engine</span>
+                    </div>
+                    <div class="visual-body">
+                        <svg class="sprint-figure" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Track lines -->
+                            <line x1="0" y1="180" x2="280" y2="180" stroke="#2a2a3e" stroke-width="1" stroke-dasharray="4 4"/>
+                            <line x1="0" y1="188" x2="280" y2="188" stroke="#1a1a2e" stroke-width="2"/>
+                            <line x1="0" y1="195" x2="280" y2="195" stroke="#1a1a2e" stroke-width="3"/>
+
+                            <!-- Sprinting figure silhouette -->
+                            <g class="sprinter" fill="url(#sprintGrad)" transform="translate(80, 20)">
+                                <!-- Head -->
+                                <circle cx="80" cy="18" r="10"/>
+                                <!-- Torso -->
+                                <path d="M72 30 L85 28 L88 65 L70 67 Z"/>
+                                <!-- Arms - swinging -->
+                                <path d="M72 35 L55 55 L58 62 L75 43 Z" opacity="0.9"/>
+                                <path d="M88 33 L110 48 L106 55 L90 42 Z" opacity="0.9"/>
+                                <!-- Front leg - driving forward -->
+                                <path d="M72 67 L60 98 L56 105 L66 107 L80 78 Z"/>
+                                <!-- Back leg - pushing off -->
+                                <path d="M84 68 L115 120 L120 132 L112 135 L88 82 Z"/>
+                                <!-- Feet -->
+                                <ellipse cx="57" cy="110" rx="8" ry="3" fill="#FF6B35"/>
+                                <ellipse cx="120" cy="138" rx="10" ry="3" fill="#FF6B35"/>
+                                <!-- Motion lines -->
+                                <line x1="130" y1="40" x2="150" y2="40" stroke="#FF6B35" stroke-width="1.5" opacity="0.6"/>
+                                <line x1="130" y1="55" x2="165" y2="55" stroke="#FF6B35" stroke-width="1.5" opacity="0.5"/>
+                                <line x1="130" y1="70" x2="155" y2="70" stroke="#FF6B35" stroke-width="1.5" opacity="0.4"/>
+                            </g>
+                            <defs>
+                                <linearGradient id="sprintGrad" x1="55" y1="10" x2="125" y2="140">
+                                    <stop offset="0%" stop-color="#FF8A50"/>
+                                    <stop offset="100%" stop-color="#E50914"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+
+                        <!-- Analysis overlay -->
+                        <div class="analysis-overlay">
+                            <div class="analysis-tag tag-1">
+                                <span class="tag-label">Knee Angular Vel</span>
+                                <span class="tag-value">312°/s</span>
+                            </div>
+                            <div class="analysis-tag tag-2">
+                                <span class="tag-label">Torso Lean</span>
+                                <span class="tag-value">18.4°</span>
+                            </div>
+                            <div class="analysis-tag tag-3">
+                                <span class="tag-label">Symmetry Index</span>
+                                <span class="tag-value tag-good">96.2%</span>
+                            </div>
+                        </div>
+
+                        <!-- Waveform -->
+                        <div class="waveform-container">
+                            <svg viewBox="0 0 300 60" class="waveform" preserveAspectRatio="none">
+                                <path d="M0,40 Q15,20 30,38 T60,35 T90,42 T120,28 T150,33 T180,40 T210,25 T240,36 T270,30 T300,35 L300,60 L0,60 Z" 
+                                      fill="url(#waveGrad)" opacity="0.3"/>
+                                <path d="M0,40 Q15,20 30,38 T60,35 T90,42 T120,28 T150,33 T180,40 T210,25 T240,36 T270,30 T300,35" 
+                                      stroke="url(#waveGrad)" stroke-width="2" fill="none"/>
+                                <defs>
+                                    <linearGradient id="waveGrad" x1="0" x2="300">
+                                        <stop offset="0%" stop-color="#FF6B35"/>
+                                        <stop offset="100%" stop-color="#E50914"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="section-header">
+                <div class="section-eyebrow">Core Capabilities</div>
+                <h2 class="section-title">Powerful tools. <span>Precise insights.</span></h2>
+                <p class="section-subtitle">
+                    从视频上传到专业训练处方，端到端的AI生物力学分析流水线
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                            <line x1="7" y1="2" x2="7" y2="22"></line>
+                            <line x1="17" y1="2" x2="17" y2="22"></line>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <line x1="2" y1="7" x2="7" y2="7"></line>
+                            <line x1="2" y1="17" x2="7" y2="17"></line>
+                            <line x1="17" y1="17" x2="22" y2="17"></line>
+                            <line x1="17" y1="7" x2="22" y2="7"></line>
+                        </svg>
+                    </div>
+                    <h3>Multi-Phase Analysis</h3>
+                    <p>同时支持起跑加速段与途中跑极速段，针对不同阶段的运动学特征进行独立建模与联合分析。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="--icon-color: #22D3EE;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>YOLO Pose Engine</h3>
+                    <p>基于YOLOv8姿态估计模型，17个关键骨骼点实时追踪，EMA平滑算法确保运动学求导精度。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="--icon-color: #A78BFA;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                            <path d="M12 2a10 10 0 0 1 10 10h-10V2z"></path>
+                            <polyline points="22 12 12 12 12 2"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Data Visualization</h3>
+                    <p>动力学仪表盘可视化：躯干倾角变化曲线、膝关节折叠对称性对比，核心指标一目了然。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="--icon-color: #4ADE80;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>DeepSeek AI Coach</h3>
+                    <p>深度集成DeepSeek大模型，结合生物力学知识库，输出结构化Markdown诊断与训练处方。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="--icon-color: #F472B6;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Word Report Export</h3>
+                    <p>一键导出Word格式训练计划报告，包含完整诊断、理论映射与专项干预处方，便于打印归档。</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon" style="--icon-color: #FBBF24;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>History Archives</h3>
+                    <p>完整的历史数据归档系统，随时回溯过往分析记录，长期追踪技术进步与伤病预警趋势。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Section -->
+        <section id="technology" class="tech-section">
+            <div class="tech-container">
+                <div class="tech-text">
+                    <div class="section-eyebrow">Technology Stack</div>
+                    <h2 class="section-title">Engineered for <span>peak performance.</span></h2>
+                    <p class="section-subtitle" style="text-align:left;">
+                        采用业界领先的技术栈，从计算机视觉到自然语言处理，每一层都为精准而生。
+                    </p>
+
+                    <div class="tech-list">
+                        <div class="tech-item">
+                            <div class="tech-num">01</div>
+                            <div class="tech-info">
+                                <h4>YOLOv8 Pose Estimation</h4>
+                                <p>实时多人姿态检测，针对单运动员场景优化目标锁定算法</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-num">02</div>
+                            <div class="tech-info">
+                                <h4>Biomechanical Feature Engineering</h4>
+                                <p>膝关节角速度、躯干倾角、CNS稳定系数、对称性指数等降维指标</p>
+                            </div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-num">03</div>
+                            <div class="tech-info">
+                                <h4>DeepSeek LLM Integration</h4>
+                                <p>结构化Prompt + 知识库上下文，输出Markdown训练处方</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-visual">
+                    <div class="stack-layer" style="--delay: 0s; --x: 0px; --y: 0px;">
+                        <div class="layer-icon">🧠</div>
+                        <div class="layer-title">DeepSeek AI</div>
+                        <div class="layer-desc">Training Prescription</div>
+                    </div>
+                    <div class="stack-layer" style="--delay: 0.15s; --x: 40px; --y: 60px;">
+                        <div class="layer-icon">📊</div>
+                        <div class="layer-title">SciPy / NumPy</div>
+                        <div class="layer-desc">Signal Processing</div>
+                    </div>
+                    <div class="stack-layer" style="--delay: 0.3s; --x: -40px; --y: 120px;">
+                        <div class="layer-icon">🎯</div>
+                        <div class="layer-title">YOLOv8</div>
+                        <div class="layer-desc">Pose Detection</div>
+                    </div>
+                    <div class="stack-layer" style="--delay: 0.45s; --x: 20px; --y: 180px;">
+                        <div class="layer-icon">🎥</div>
+                        <div class="layer-title">OpenCV</div>
+                        <div class="layer-desc">Video Processing</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="process-section">
+            <div class="section-header">
+                <div class="section-eyebrow">Workflow</div>
+                <h2 class="section-title">From video to <span>victory.</span></h2>
+                <p class="section-subtitle">
+                    三步完成从原始视频到专业训练计划的全流程
+                </p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <h3>Upload Video</h3>
+                    <p>上传起跑段与途中跑段视频（支持MP4、MOV格式，推荐60fps以上原速拍摄）。</p>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="step-arrow">
+                    <svg viewBox="0 0 60 20" fill="none">
+                        <path d="M0 10 H55 M48 3 L55 10 L48 17" stroke="url(#arrowGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="arrowGrad" x1="0" x2="55">
+                                <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="#E50914"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <h3>AI Biomechanical Analysis</h3>
+                    <p>系统自动执行姿态检测、特征提取、动力学计算与可视化，全程无需人工干预。</p>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="step-arrow">
+                    <svg viewBox="0 0 60 20" fill="none">
+                        <path d="M0 10 H55 M48 3 L55 10 L48 17" stroke="url(#arrowGrad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="arrowGrad2" x1="0" x2="55">
+                                <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="#E50914"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <h3>Get Training Protocol</h3>
+                    <p>AI教练输出诊断报告+Word版训练处方，包含动作要点、组数间歇与配速要求。</p>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <button class="btn-hero-primary large" onclick="enterApp()">
+                    Start Your Analysis Now
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="landing-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-logo" style="margin-bottom:16px;">
+                        <div class="logo-mark">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 32 L20 8 L32 32" stroke="url(#logoGrad2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs>
+                                    <linearGradient id="logoGrad2" x1="8" y1="8" x2="32" y2="32">
+                                        <stop offset="0%" stop-color="#FF6B35"/>
+                                        <stop offset="100%" stop-color="#E50914"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="logo-text">SprintLing</span>
+                    </div>
+                    <p class="footer-tagline">一切为了更快 — 让每位运动员都能获得顶级生物力学诊断</p>
+                </div>
+                <div class="footer-links-group">
+                    <div class="footer-col">
+                        <h5>Product</h5>
+                        <a href="#features">Features</a>
+                        <a href="#technology">Technology</a>
+                        <a href="#process">How it Works</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Support</h5>
+                        <a href="#">Documentation</a>
+                        <a href="#">Guidelines</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 SprintLing. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ====== MAIN APP ====== -->
+    <div id="app" style="display:none;">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo" onclick="goToLanding()">
+                    <div class="logo-mark small">
+                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 32 L20 8 L32 32" stroke="url(#sidebarLogoGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="sidebarLogoGrad" x1="8" y1="8" x2="32" y2="32">
+                                    <stop offset="0%" stop-color="#FF8A50"/>
+                                    <stop offset="100%" stop-color="#FFFFFF"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>SprintLing</h2>
+                        <p class="subtitle">一切为了更快</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section" id="sidebar-user-section">
+                <button class="btn-back" onclick="backToRegistration()">← 返回重新注册</button>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>History Records | 历史分析记录</h3>
+                <div id="history-list" class="history-list">
+                    <p class="empty-state">Loading records...</p>
+                </div>
+            </div>
+
+            <div class="sidebar-section" id="selected-record-section" style="display:none;">
+                <h3>Selected | 当前选中</h3>
+                <p id="selected-record-name" class="selected-name"></p>
+                <button class="btn-delete" onclick="deleteSelectedRecord()">🗑 Delete Record | 删除记录</button>
+            </div>
+
+            <div class="sidebar-section sidebar-home">
+                <button class="btn-home" onclick="goToLanding()">
+                    ← Back to Home
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <!-- Registration View -->
+            <section id="registration-view" class="view active">
+                <div class="container fade-in">
+                    <h1>Athlete Profile | 运动员注册</h1>
+                    <p class="lead">Create a profile to generate a highly personalized technical training plan. You can also skip this step.</p>
+
+                    <form id="registration-form" class="form-card">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name | 姓名</label>
+                                <input type="text" id="name" name="name" placeholder="e.g. 凌润林" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="event">Event | 专项</label>
+                                <select id="event" name="event">
+                                    <option value="100m">100m</option>
+                                    <option value="200m">200m</option>
+                                    <option value="400m">400m</option>
+                                    <option value="110m Hurdles">110m Hurdles</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pb">Personal Best | 个人纪录 (s)</label>
+                                <input type="text" id="pb" name="pb" placeholder="e.g. 11.75">
+                            </div>
+                            <div class="form-group">
+                                <label for="goal">Goal | 目标成绩 (s)</label>
+                                <input type="text" id="goal" name="goal" placeholder="e.g. 11.40">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Register & Enter System | 注册并进入</button>
+                        </div>
+                    </form>
+
+                    <div class="skip-section">
+                        <button class="btn-skip" onclick="skipRegistration()">Skip Registration | 直接跳过</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard View -->
+            <section id="dashboard-view" class="view">
+                <div class="container fade-in">
+                    <div id="welcome-header" class="welcome-header">
+                        <h1 id="welcome-title">SprintLing Analytics AI | 短跨力学分析系统</h1>
+                        <p id="welcome-subtitle"></p>
+                    </div>
+
+                    <!-- Notice Box -->
+                    <div class="notice-box">
+                        <strong>拍摄与上传须知 | Recording &amp; Uploading Guidelines:</strong>
+                        <ol>
+                            <li><strong>机位稳定 (Stable Camera)</strong>: 拍摄机位请保持绝对稳定，避免跟随晃动。</li>
+                            <li><strong>单人入镜 (Single Subject)</strong>: 画面中尽量只包含目标运动员，避免背景中有其他移动人员干扰模型锁定。</li>
+                            <li><strong>原速原片 (Original Speed)</strong>: 请直接上传原速视频（推荐相机自带的 60fps/120fps 慢动作格式），<strong>切勿使用剪辑软件自行放慢倍速</strong>，后期慢放会导致抽帧或重复帧，直接摧毁动力学求导的准确率。</li>
+                        </ol>
+                    </div>
+
+                    <p class="upload-hint">Please upload <strong>at least one</strong> video phase (Start or Max Velocity) for analysis.</p>
+
+                    <!-- Upload Section -->
+                    <div class="upload-section">
+                        <div class="upload-card">
+                            <h3>1. Start Phase Video | 起跑段视频</h3>
+                            <div class="upload-area" id="start-upload-area">
+                                <input type="file" id="start-video" accept="video/mp4,video/quicktime" class="file-input">
+                                <div class="upload-placeholder">
+                                    <div class="upload-icon">📹</div>
+                                    <p>Click or drag video here</p>
+                                    <span>MP4, MOV supported</span>
+                                </div>
+                                <div class="file-info" id="start-file-info" style="display:none;">
+                                    <span class="file-name" id="start-file-name"></span>
+                                    <button class="file-remove" onclick="removeFile('start')">✕</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="upload-card">
+                            <h3>2. Max Velocity Video | 途中跑段视频</h3>
+                            <div class="upload-area" id="maxvel-upload-area">
+                                <input type="file" id="maxvel-video" accept="video/mp4,video/quicktime" class="file-input">
+                                <div class="upload-placeholder">
+                                    <div class="upload-icon">🏃</div>
+                                    <p>Click or drag video here</p>
+                                    <span>MP4, MOV supported</span>
+                                </div>
+                                <div class="file-info" id="maxvel-file-info" style="display:none;">
+                                    <span class="file-name" id="maxvel-file-name"></span>
+                                    <button class="file-remove" onclick="removeFile('maxvel')">✕</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-section">
+                        <button id="analyze-btn" class="btn-analyze" onclick="startAnalysis()">
+                            🔬 Initialize Biomechanical Engine | 启动分析
+                        </button>
+                    </div>
+
+                    <!-- Processing Section -->
+                    <div id="processing-section" class="processing-section" style="display:none;">
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                            <p class="progress-stage" id="progress-stage">Initializing...</p>
+                        </div>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div id="results-section" class="results-section" style="display:none;">
+                        <hr class="divider">
+
+                        <div id="download-section" class="download-section" style="display:none;">
+                            <button class="btn-download-word" onclick="downloadWordReport()">
+                                📄 Download Word Document | 一键导出 Word 版训练计划
+                            </button>
+                        </div>
+
+                        <!-- Tabs -->
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="tracking" onclick="switchTab('tracking')">
+                                Phase Tracking | 动作追踪
+                            </button>
+                            <button class="tab-btn" data-tab="dashboard" onclick="switchTab('dashboard')">
+                                Dynamics Dashboard | 动力学数据
+                            </button>
+                            <button class="tab-btn" data-tab="protocol" onclick="switchTab('protocol')">
+                                AI Protocol | 教练分析
+                            </button>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div class="tab-content active" id="tab-tracking">
+                            <div class="video-grid">
+                                <div class="video-card" id="start-video-card" style="display:none;">
+                                    <h4>Phase 1: Start (起跑段)</h4>
+                                    <video id="start-video-player" controls></video>
+                                    <button class="btn-download-sm" onclick="downloadVideo('proc_start.webm')">
+                                        ⬇ Download Start Phase Video
+                                    </button>
+                                </div>
+                                <div class="video-card" id="maxvel-video-card" style="display:none;">
+                                    <h4>Phase 2: Max Velocity (途中跑段)</h4>
+                                    <video id="maxvel-video-player" controls></video>
+                                    <button class="btn-download-sm" onclick="downloadVideo('proc_maxvel.webm')">
+                                        ⬇ Download Max Velocity Video
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="payload-section" class="payload-section" style="display:none;">
+                                <hr>
+                                <h3>降维后的数据 | Reduced Biomechanical Payload</h3>
+                                <p class="section-desc">以下为系统自动剥离环境噪音后，输入给 AI 教练的核心运动学指标 | Core kinematic metrics extracted and fed to the AI coach:</p>
+                                <pre id="payload-data" class="payload-json"></pre>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="tab-dashboard">
+                            <div id="chart-section" class="chart-section" style="display:none;">
+                                <img id="chart-img" alt="Biomechanics Dashboard">
+                                <div class="explanation-box">
+                                    <strong>图表释义 (Chart Explanations)：</strong>
+                                    <p><strong>1. Torso Lean Dynamics (起跑躯干倾角)</strong> (如提供起跑视频)：监控加速阶段身体重心的压制能力。过早抬升会导致水平推进力向垂直方向泄露，降低加速效率。</p>
+                                    <p><strong>2. Knee Flexion Symmetry (途中跑阶段期膝关节对称性)</strong> (如提供途中跑视频)：通过追踪步态周期中的左右膝关节折叠峰值角度，量化双侧发力平衡。不对称不仅暗示中枢神经(CNS)单侧疲劳或代偿，也是拉伤的潜在预警。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" id="tab-protocol">
+                            <!-- AI Report Empty State Placeholder -->
+                            <div id="report-empty" class="empty-state-card">
+                                <div class="empty-icon">🧠</div>
+                                <h3>AI Coach Report Not Ready | 教练分析报告未生成</h3>
+                                <p id="report-empty-reason">
+                                    请先完成视频分析流程，AI 教练会自动生成训练处方。
+                                    <br/>If you're viewing a historical record, the report may be missing — click below to regenerate.
+                                </p>
+                                <div id="report-empty-actions">
+                                    <button id="regenerate-report-btn" class="btn-regenerate" onclick="regenerateMissingReport()" style="display:none;">
+                                        🔄 Regenerate AI Report | 重新生成教练分析
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="report-section" class="report-section" style="display:none;">
+                                <div id="report-content" class="report-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
